@@ -112,7 +112,7 @@
           }
           if (inner_scrolling) {
             win_height = win.height();
-            if (height > win_height) {
+            if (height + offset_top > win_height) {
               if (!bottomed) {
                 offset -= delta;
                 offset = Math.max(win_height - height, offset);
