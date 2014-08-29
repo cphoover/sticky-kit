@@ -165,12 +165,15 @@ $.fn.stick_in_parent = (opts={}) ->
         win.off "scroll", tick
         $(document.body).off "sticky_kit:recalc", recalc_and_tick
         elm.off "sticky_kit:detach", detach
+        win.off "touchmove", tick
+        win.off "resize", recalc_and_tick
         elm.removeData "sticky_kit"
 
         elm.css {
           position: ""
           bottom: ""
           top: ""
+          width: ""
         }
 
         parent.position "position", ""
